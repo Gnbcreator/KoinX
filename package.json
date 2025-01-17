@@ -9,14 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/material": "^6.3.1",
+    "@mui/x-charts": "^7.23.6",
+    "@preline/carousel": "^2.5.2",
+    "dotenv": "^16.4.7",
+    "next": "14.2.23",
+    "preline": "^2.7.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.23"
+    "tailwind-scrollbar-hide": "^2.0.0"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.23"
+    "eslint-config-next": "14.2.23",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
   }
 }
