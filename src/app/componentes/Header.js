@@ -15,7 +15,7 @@ export default function Header(params) {
             <Container maxWidth="xl" className=' '>
                 <div className='flex justify-between h-[60.75px] lg:h-[80px]  '>
                     <div className='my-auto'>
-                        <Image src={'/logo.svg'} width={100} height={100} />
+                        <Image src={'/logo.svg'} width={100} height={100} alt='img' />
                     </div>
                     <IconButton size='small' color='primary' className='lg:hidden mt-4 p-2 my-auto' aria-label="" onClick={handleMenu}>
                         <Menu className='my-auto w-[27.42px] h-[27.42px]' />

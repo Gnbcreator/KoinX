@@ -5,6 +5,8 @@ import IconButton from '@mui/material/IconButton'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Skeleton } from '@mui/material';
+import Image from "next/image";
+
 export default function Footer() {
     const [trendingCoins, setTrendingCoins] = useState([])
 
@@ -36,7 +38,7 @@ export default function Footer() {
         const result = await response.json();
         setTrendingCoins(result.coins);
     }
-        ;
+    console.log(trendingCoins)
 
     useEffect(() => {
         getTrendingCoin()
@@ -61,9 +63,9 @@ export default function Footer() {
                                         {
 
                                             trendingCoins.map((data) => (
-                                                <div className='flex-shrink-0 w-[55%] h-[110px] md:w-[252px] md:h-[160px] lg:w-[252px] lg:h-[160px] rounded-[10px] border-2 p-3'>
+                                                <div key={data.item.coin_id} className='flex-shrink-0 w-[55%] h-[110px] md:w-[252px] md:h-[160px] lg:w-[252px] lg:h-[160px] rounded-[10px] border-2 p-3'>
                                                     <div className='flex'>
-                                                        <img className='my-auto w-5 h-5  lg:w-[26px] lg:h-[26px] rounded-full' src={data.item.small} />
+                                                        <Image width={100} height={100} alt='img' className='my-auto w-5 h-5  lg:w-[26px] lg:h-[26px] rounded-full' src={data.item.small} />
                                                         <div className='flex justify-between w-[100%]'>
                                                             <h1 className=' line-clamp-3 my-auto text-[10.09px] font-[400] lg:text-[16px]'>{data.item.name}</h1>
                                                             <label className='bg-slate-200 rounded-md p-[1px] my-auto font-[400] text-[7px] lg:text-[12px] text-[#32BE88]'>+0.52%</label>
@@ -73,7 +75,7 @@ export default function Footer() {
                                                         <label className='font-[500] text-[12.62px] lg:text-[20px] '>${numberFormater(data.item.data.price)}</label>
                                                     </div>
                                                     <div className='py-1'>
-                                                        <img className='h-[40px] w-[100%] md:w-[200px] md:h-[60px] lg:w-[200px] lg:h-[60px]' src={data.item.data.sparkline} />
+                                                        <Image width={100} height={100} alt='' className='h-[40px] w-[100%] md:w-[200px] md:h-[60px] lg:w-[200px] lg:h-[60px]' src={data.item.data.sparkline} />
                                                     </div>
                                                 </div >
                                             ))
@@ -99,9 +101,9 @@ export default function Footer() {
                                         </div>
                                         {
                                             trendingCoins.map((data) => (
-                                                <div className='flex-shrink-0 w-[55%] h-[110px] md:w-[252px] md:h-[160px] lg:w-[252px] lg:h-[160px] rounded-[10px] border-2 p-3'>
+                                                <div key={data.item.id} className='flex-shrink-0 w-[55%] h-[110px] md:w-[252px] md:h-[160px] lg:w-[252px] lg:h-[160px] rounded-[10px] border-2 p-3'>
                                                     <div className='flex'>
-                                                        <img className='my-auto w-5 h-5  lg:w-[26px] lg:h-[26px] rounded-full' src={data.item.small} />
+                                                        <Image width={100} height={100} alt='img' className='my-auto w-5 h-5  lg:w-[26px] lg:h-[26px] rounded-full' src={data.item.small} />
                                                         <div className='flex justify-between w-[100%]'>
                                                             <h1 className=' line-clamp-3 my-auto text-[10.09px] font-[400] lg:text-[16px]'>{data.item.name}</h1>
                                                             <label className='bg-slate-200 rounded-md p-[1px] my-auto font-[400] text-[7px] lg:text-[12px] text-[#32BE88]'>+0.52%</label>
@@ -111,7 +113,7 @@ export default function Footer() {
                                                         <label className='font-[500] text-[12.62px] lg:text-[20px] '>${numberFormater(data.item.data.price)}</label>
                                                     </div>
                                                     <div className='py-1'>
-                                                        <img className='h-[40px] w-[100%] md:w-[200px] md:h-[60px] lg:w-[200px] lg:h-[60px]' src={data.item.data.sparkline} />
+                                                        <Image alt='img' width={100} height={100} className='h-[40px] w-[100%] md:w-[200px] md:h-[60px] lg:w-[200px] lg:h-[60px]' src={data.item.data.sparkline} />
                                                     </div>
                                                 </div >
                                             ))

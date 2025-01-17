@@ -5,6 +5,7 @@ import { Label, PlayArrow } from '@mui/icons-material';
 import numberFormater from "@/utils/NumberFormater";
 import dateFormater from "@/utils/dateFormater";
 import { Gauge, gaugeClasses } from '@mui/x-charts/Gauge';
+import Image from "next/image";
 
 export default function TabNavigation({ total_volume, current, low, high, high52W, low52W, high7D, low7D, tredingVolume, market_cap_rank, market_cap, ath, atl, ath_change_percentage, atl_change_percentage, ath_date, atl_date }) {
     const [value, setValue] = useState(0);
@@ -49,25 +50,27 @@ export default function TabNavigation({ total_volume, current, low, high, high52
     const fundametals = [
         {
             body1: [
-                { lable: ' Bitcoin Price', Value: `$${numberFormater(current)}` },
-                { lable: ' 24h Low / 24h High', Value: `$${numberFormater(low)} /$${numberFormater(high)}` },
-                { lable: ' 7d Low / 7d High', Value: `$${numberFormater(low7D)} / $${numberFormater(high7D)}` },
-                { lable: ' Trading Volume', Value: `$${numberFormater(tredingVolume)}` },
-                { lable: ' Market Cap Rank', Value: `#${numberFormater(market_cap_rank)}` }
+                { index: 0, lable: ' Bitcoin Price', Value: `$${numberFormater(current)}` },
+                { index: 1, lable: ' 24h Low / 24h High', Value: `$${numberFormater(low)} /$${numberFormater(high)}` },
+                { index: 2, lable: ' 7d Low / 7d High', Value: `$${numberFormater(low7D)} / $${numberFormater(high7D)}` },
+                { index: 3, lable: ' Trading Volume', Value: `$${numberFormater(tredingVolume)}` },
+                { index: 4, lable: ' Market Cap Rank', Value: `#${numberFormater(market_cap_rank)}` }
             ]
         },
         {
             body2: [
-                { lable: 'Market Cap', Value: `$${numberFormater(market_cap)}` },
-                { lable: ' Market Cap Dominance', Value: `${numberFormater(marketCapDominace)}%` },
-                { lable: 'Volume / Market Cap', Value: `${numberFormater(volume_market_cap)}` },
+                { index: 1, lable: 'Market Cap', Value: `$${numberFormater(market_cap)}` },
+                { index: 2, lable: ' Market Cap Dominance', Value: `${numberFormater(marketCapDominace)}%` },
+                { index: 3, lable: 'Volume / Market Cap', Value: `${numberFormater(volume_market_cap)}` },
                 {
+                    index: 4,
                     lable: 'All-Time High',
                     Value: `$${numberFormater(ath)}`,
                     Date: `${dateFormater(ath_date)}(about 1Y)`,
                     Percentage: ` ${numberFormater(ath_change_percentage)}%`
                 },
                 {
+                    index: 5,
                     lable: 'All-Time Low',
                     Value: `$${numberFormater(atl)}`,
                     Date: `${dateFormater(atl_date)}(over 9Y)`,
@@ -79,18 +82,21 @@ export default function TabNavigation({ total_volume, current, low, high, high52
 
     const teams = [
         {
+            id: "1",
             name: "John Smith",
             imgae: '/accets/sandeep.svg',
             designation: "Designation here",
             details: "Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet nec neque sed pellentesque viverra. Consectetur proin amet ut id facilisi quis consectetur. Tellus gravida ultricies feugiat sed eu egestas dolor est ipsum. Malesuada etiam mi gravida praesent interdu",
         },
         {
+            id: "2",
             name: "Ellina Williams",
             imgae: '/accets/sandeep2.svg',
             designation: "Designation here",
             details: "Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet nec neque sed pellentesque viverra. Consectetur proin amet ut id facilisi quis consectetur. Tellus gravida ultricies feugiat sed eu egestas dolor est ipsum. Malesuada etiam mi gravida praesent interdu",
         },
         {
+            id: "3",
             name: "John lombata",
             imgae: '/accets/sandeep3.svg',
             designation: "Designation here",
@@ -138,7 +144,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         </div>
                         <div className="flex justify-between w-auto  my-12">
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400] ">Today's Low</label>
+                                <label className=" text-[13.48px] font-[400] ">Today&aposs Low</label>
                                 {
                                     low ? <label className=" text-[13.48px] font-[400]">{numberFormater(low)}</label> : <Skeleton variant="text" className=" w-[100px]" />
                                 }
@@ -156,7 +162,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </div>
                             </section >
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400]">Today's High</label>
+                                <label className=" text-[13.48px] font-[400]">Today&aposs High</label>
                                 {high ? <label className="text-end text-[13.48px] font-[400]">{numberFormater(high)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                             </section>
                         </div >
@@ -188,7 +194,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         <div>
                             <div>
                                 <h1 className="text-[18.91px] font-[600] flex text-[#44475B]">Fundamentals
-                                    <img className="my-auto w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
+                                    <Image width={100} height={100} alt="img" className="my-auto w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                                 </h1>
                             </div>
                             <div className=" lg:flex lg:justify-between w-[100%] h-auto pb-10 gap-28 lg:gap-10">
@@ -197,7 +203,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                         {
                                             fundametals.map((items) => (
                                                 items.body1 && items.body1.map((data) => (
-                                                    <div className="pt-3 pb-3 flex justify-between py-auto w-[100%]  h-[54px] border-b">
+                                                    <div key={data.index} className="pt-3 pb-3 flex justify-between py-auto w-[100%]  h-[54px] border-b">
                                                         {marketCapDominace ? <div className="my-auto"> <label className="my-auto font-[500] text-[14px] text-[#768396]">{data.lable}</label></div> : <Skeleton variant="text" className=" w-[100px]" />}
                                                         {marketCapDominace ? <label className="my-auto font-[500] text-[13px] lg:text-[14px] ">{data.Value}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                                                     </div>
@@ -212,7 +218,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                             fundametals.map((items) => (
                                                 items.body2 && items.body2.map((data) => (
                                                     data.lable === "All-Time High" || data.lable === "All-Time Low" ? (
-                                                        <div className="lg:w-[100%]">
+                                                        <div key={data.index} className="lg:w-[100%]">
                                                             <div className="pt-3 pb-3 flex justify-between py-auto  h-[54px] border-b">
                                                                 {marketCapDominace ? <div className="my-auto"> <label className="my-auto font-[500] text-[14px] text-[#768396]">{data.lable}</label></div> : <Skeleton variant="text" className=" w-[100px]" />}
 
@@ -241,7 +247,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                                     )
                                                         :
                                                         (
-                                                            <div className="">
+                                                            <div key={data.index} className="">
                                                                 <div className="pt-3 pb-3 flex justify-between py-auto w-[100%]  h-[54px] border-b">
                                                                     {marketCapDominace ? <label className="my-auto font-[500] text-[14px] text-[#768396]">{data.lable}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                                                                     {marketCapDominace ? <label className="mx-2 my-auto font-[500] text-[13px] lg:text-[14px] ">{data.Value}</label> : <Skeleton variant="text" className=" w-[100px]" />}
@@ -264,13 +270,13 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         <div className=""><h1 className="text-[24px] font-[600]">Sentiments</h1></div>
                         <div className="my-5 flex">
                             <h1 className="text-[18.91px] font-[600] text-[#44475B]">Key Events</h1>
-                            <img className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
+                            <Image width={100} height={100} alt="img" className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                         </div>
 
                         <div className=" overflow-x-auto  flex  justify-between  gap-[10px]">
 
                             <div className=" flex-shrink-0 flex w-[340px] lg:w-[456px]  h-[145px]  lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
-                                <img src="/accets/Frame 1116601921.svg" className="w-[30px] h-[30px] lg:w-[44px] lg:h-[44px]" />
+                                <Image width={100} height={100} alt="img" src="/accets/Frame 1116601921.svg" className="w-[30px] h-[30px] lg:w-[44px] lg:h-[44px]" />
                                 <section className="grid ">
                                     <label className=" text-[12px] lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
                                     <p className="text-wrap text-[10px]  overflow-y-auto scroll-smooth scrollbar-hide  font-[400] lg:text-[14px] lg:font-[400] text-[#3E5765]">
@@ -280,7 +286,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             </div>
 
                             <div className=" flex-shrink-0 flex  w-[350px] h-[145px] lg:w-[456px] lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
-                                <img src="/accets/Uptend_mark.svg" className="w-[44px] h-[44px]" />
+                                <Image width={100} height={100} alt="img" src="/accets/Uptend_mark.svg" className="w-[44px] h-[44px]" />
                                 <section className="grid">
                                     <label className="  text-[12px] lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
                                     <p className="text-wrap text-[10px]  overflow-y-auto scroll-smooth scrollbar-hide font-[400] lg:text-[14px] lg:font-[400] text-[#3E5765]">
@@ -294,7 +300,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         <div className=" justify-between w-[100%] my-12 ">
                             <div className="flex">
                                 <h1 className="text-[18.91px] font-[600] text-[#44475B]">Analytics estimates</h1>
-                                <img className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
+                                <Image width={100} height={100} alt="img" className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                             </div>
                             <div className="flex justify-evenly w-[100%]  lg:w-[830px] lg:gap-[14px] my-7">
                                 <div className="bg-[#EBF9F4] w-[40%] lg:w-[116.86px] lg:h-[120px] rounded-full flex p-4">
@@ -335,7 +341,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             <section className="my-5 lg:w-[100%]">
                                 <label className="text-[18px] font-[700]">What is Bitcoin</label>
                                 <p className="text-[16] font-[400] lg:font-[500] text-[#0F1629] my-2 tracking-normal leading-7">
-                                    Bitcoin’s price today is US$16,951.82, with a 24-hour trading volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC and a max supply of 21 M BTC
+                                    Bitcoin&aposs price today is US$16,951.82, with a 24-hour trading volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC and a max supply of 21 M BTC
                                 </p>
                             </section>
                             <hr />
@@ -357,23 +363,23 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 <div className="grid gap-5 lg:flex   xl:gap-28 my-4">
                                     {/* card 1 */}
                                     <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#79F1A4] to-[#0E5CAD] flex gap-5">
-                                        <img src="/accets/Rectangle 11947.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
+                                        <Image alt="img" width={100} height={100} src="/accets/Rectangle 11947.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
                                         <div className="my-auto lg:w-[195px] lg:h-[104px]">
                                             <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your Profits</h1>
                                             <button className=" flex text-[13.6px] lg:text-[14px] font-[600] bg-blue-50 p-2 rounded-lg my-4">
                                                 <label className="text-[13.6px] font-[600]">Check Now </label>
-                                                <img className="" src="/accets/Arrow-Right.svg " />
+                                                <Image width={100} height={100} alt="img" className="" src="/accets/Arrow-Right.svg " />
                                             </button>
                                         </div>
                                     </div>
                                     {/* card 2 */}
                                     <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#FF9865] to-[#EF3031] flex gap-5">
-                                        <img src="/accets/Rectangle 11948.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
+                                        <Image width={100} alt="img" height={100} src="/accets/Rectangle 11948.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
                                         <div className="my-auto w-[195px] h-[104px]">
                                             <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your tax liability</h1>
                                             <button className="flex text-[14px] font-[600] bg-blue-50 p-2 rounded-lg my-4 ">
                                                 <label>Check Now </label>
-                                                <img className="" src="/accets/Arrow-Right.svg " />
+                                                <Image alt="img" width={100} height={100} className="" src="/accets/Arrow-Right.svg " />
                                             </button>
                                         </div>
                                     </div>
@@ -443,9 +449,9 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         </section>
                         {
                             teams.map((data) => (
-                                <section className="lg:w-[100%] my-7 lg:flex bg-[#E8F4FD] rounded-lg p-3">
+                                <section key={data.id} className="lg:w-[100%] my-7 lg:flex bg-[#E8F4FD] rounded-lg p-3">
                                     <div className="grid lg:w-[128.61px]">
-                                        <img src={data.imgae} className="mx-auto" />
+                                        <Image width={100} height={100} alt="img" src={data.imgae} className="mx-auto" />
                                         <label className="text-center text-[15px] font-[600]">{data.name}</label>
                                         <small className="text-center text-[12px] font-[400]">{data.designation}</small>
                                     </div>

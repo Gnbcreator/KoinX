@@ -13,7 +13,7 @@ import Footer from "./componentes/Footer";
 
 
 export default function Home() {
-  const [cryptoCoin, setCryptoCoin] = useState();
+  const [cryptoCoin, setCryptoCoin] = useState([]);
   const [INR, setInr] = useState();
   const [marketData, setMarketData] = useState([])
   const [high52W, setHigh52W] = useState();
@@ -108,8 +108,8 @@ export default function Home() {
       <Container maxWidth="xl">
         {/* Breadcrumbs */}
         <Breadcrumbs separator=">>" className="flex lg:text-lg lg:px-2  mt-3">
-          <Link href={''} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
-          <Link href={''} className="font-[400] text-14px text-slate-700 leading-[16.94px]" >Bitcoin</Link>
+          <Link href={"/"} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
+          <Link href={"/"} className="font-[400] text-14px text-slate-700 leading-[16.94px]" >Bitcoin</Link>
         </Breadcrumbs>
         <div className=" grid grid-cols-12 -mt-5 lg:gap-6 ">
 
@@ -120,7 +120,7 @@ export default function Home() {
 
               <div className="flex gap-20 lg:my-2">
                 <div className="flex gap-3">
-                  <img src="/accets/bitcoin-svg.svg" className="my-auto w-[32px] h-[32px]" />
+                  <Image width={100} height={100} alt="img" src="/accets/bitcoin-svg.svg" className="my-auto w-[32px] h-[32px]" />
                   <h1 className="my-auto font-[600] text-[21px] text-4xl">Bitcoin</h1>
                   <h1 className="my-auto font-[600]  text-[14px] text-slate-600">BTC</h1>
                 </div>
@@ -145,7 +145,7 @@ export default function Home() {
                     {
                       cryptoCoin ?
                         <label className="my-auto bg-[#EBF9F4] flex w-[84px] h-[28px]">
-                          <img className=" w-[11px] h-[8px] my-auto mx-auto " src="/accets/Polygon2.svg" />
+                          <Image width={100} height={100} alt="img" className=" w-[11px] h-[8px] my-auto mx-auto " src="/accets/Polygon2.svg" />
                           <label className="text-[#14B079] my-auto mx-auto text-[16px]  text font-[500] ">{numberFormater(cryptoCoin?.bitcoin?.usd_24h_change)}%</label>
                         </label>
                         :
@@ -216,7 +216,7 @@ export default function Home() {
             <div className="lg:my-10 grid grid-cols-1 lg:flex lg:flex-col mx-auto w-[100%] h-auto lg:w-[100%]  xl:w-[426px] xl:h-[515px] bg-[#0052FE] rounded-2xl py-14">
               {/* Image Div */}
               <div className=" mx-auto  order-1 lg:col-span-5 lg:my-5 xl:my-10">
-                <Image src="/accets/mobile_Vector.svg" width={100} height={100} quality={100} className="w-[149px] h-[139px] lg:w-[150px] lg:h-[160px] xl:w-[170px] xl:h-[166px] mx-auto" />
+                <Image alt="img" src="/accets/mobile_Vector.svg" width={100} height={100} quality={100} className="w-[149px] h-[139px] lg:w-[150px] lg:h-[160px] xl:w-[170px] xl:h-[166px] mx-auto" />
               </div>
 
               {/* Text Div */}
@@ -235,7 +235,7 @@ export default function Home() {
                 <button className="lg:my-7 md:my-7 text-center w-[237px] h-[48px] bg-white rounded-lg text-[16px] font-[600] flex mx-auto">
                   <label className="mx-auto flex my-auto">
                     Get Started for FREE
-                    <img src="/accets/Arrow-Right.svg" className="my-auto" />
+                    <Image width={100} height={100} alt="img" src="/accets/Arrow-Right.svg" className="my-auto" />
                   </label>
                 </button>
               </div>
