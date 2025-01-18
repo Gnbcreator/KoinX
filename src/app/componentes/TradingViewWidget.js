@@ -40,8 +40,8 @@ function TradingViewWidget() {
     }, []);
 
     return (
-        <div className="tradingview-widget-container " ref={container} style={{ height: "100%", width: "100%", border: "0px" }}>
-            <div className="tradingview-widget-container__widge" style={{ height: "100%", width: "100%" }} ></div>
+        <div className="tradingview-widget-container relative" ref={container} style={{ height: "100%", width: "100%", border: "0px" }}>
+            <div className="tradingview-widget-container__widge absolute" style={{ height: "100%", width: "100%" }} ></div>
         </div>
     );
 }
