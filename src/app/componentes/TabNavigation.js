@@ -234,7 +234,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
 
                                                                             }
                                                                             <div>
-                                                                                <label className="my-auto font-[400] text-[9px] lg:text-[10px] xl:text-[11.2px] ">{data.Date}</label>
+                                                                                <label className="lg:my-auto font-[400] text-[10px] lg:text-[10px] xl:text-[11.2px] ">{data.Date}</label>
                                                                             </div>
                                                                         </div>
                                                                         :
