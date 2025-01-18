@@ -117,21 +117,21 @@ export default function Home() {
         <div className="my-4  grid grid-cols-12  lg:gap-6 ">
           {/* left side section  */}
           <section className=" col-span-full lg:col-span-8 xl:col-span-8  grid grid-cols-12">
-            <div className="bg-white rounded-xl lg:my-5 lg:gap-16 col-span-12 p-4 ">
+            <div className="bg-white rounded-lg lg:my-5 lg:gap-16 col-span-12 p-4 border">
 
-              <div className="flex gap-20 lg:my-2">
+              <div className="my-4 flex gap-20 lg:my-2">
                 <div className="flex gap-3">
                   <Image width={100} height={100} alt="img" src="/accets/bitcoin-svg.svg" className="my-auto w-[32px] h-[32px]" />
                   <h1 className="my-auto font-[600] text-[21px] text-4xl">Bitcoin</h1>
                   <h1 className="my-auto font-[600]  text-[14px] text-slate-600">BTC</h1>
                 </div>
                 <div className="my-auto">
-                  <button className="lg:h-[40px] h-[32px] w-[80px] bg-[#768396] rounded-lg text-white text-xl">Rank#1</button>
+                  <button className=" lg:h-[40px] h-[32px] w-[80px] bg-[#768396] rounded-lg text-white text-xl">Rank#1</button>
                 </div>
               </div>
 
               <div className="">
-                <div className=" flex my-auto gap-12 lg:mt-10">
+                <div className=" flex my-auto gap-7 lg:mt-10">
                   {
                     cryptoCoin ? <h1 className="text-[28px] font-[600]">${numberFormater(cryptoCoin?.bitcoin?.usd)}</h1>
                       :
@@ -142,10 +142,10 @@ export default function Home() {
                       />
 
                   }
-                  <div className="flex " >
+                  <div className="flex" >
                     {
                       cryptoCoin ?
-                        <label className="my-auto bg-[#EBF9F4] flex w-[84px] h-[28px]">
+                        <label className="rounded-[4px] my-auto bg-[#EBF9F4] flex w-[84px] h-[28px]">
                           <Image width={100} height={100} alt="img" className=" w-[11px] h-[8px] my-auto mx-auto " src="/accets/Polygon2.svg" />
                           <label className="text-[#14B079] my-auto mx-auto text-[16px]  text font-[500] ">{numberFormater(cryptoCoin?.bitcoin?.usd_24h_change)}%</label>
                         </label>
@@ -157,7 +157,7 @@ export default function Home() {
                         />
                     }
                     {
-                      cryptoCoin ? <label className="text-[#768396] text-[14px] my-auto font-[500] mx-8 ">(24H)</label> : <Skeleton
+                      cryptoCoin ? <label className="text-[#768396] text-[14px] my-auto font-[500] mx-2 ">(24H)</label> : <Skeleton
                         variant="text"
                         className="text-[28px] w-[50px]"
                         animation="wave"
@@ -178,9 +178,8 @@ export default function Home() {
                     />
                 }
                 <hr className="my-7" />
-
-                <div className="my-10 h-[350px] lg:h-[400px]">
-                  <label className="text-[14px] lg:text-[16px] font-[600]">Bitcoin Price Chart (USD)</label>
+                <div className=""><label className=" text-[14px] lg:text-[16px] font-[600]">Bitcoin Price Chart (USD)</label></div>
+                <div className="my-5 h-[350px] md:h-[400px] lg:h-[400px] xl:h-[450px] ">
                   <TradingViewWidget />
                 </div>
 
@@ -188,7 +187,7 @@ export default function Home() {
 
             </div>
 
-            <div className="col-span-full ">
+            <div className="col-span-full my-4">
               <TabNavigation
                 current={cryptoCoin?.bitcoin?.usd}
                 low={marketData[0]?.low_24h}
@@ -250,10 +249,11 @@ export default function Home() {
             </div>
           </section>
         </div >
+        <Container maxWidth="xl" className="bg-white my-7">
+          <Footer />
+        </Container>
       </Container >
-      <Container maxWidth="2xl" className="bg-white lg:mt-10">
-        <Footer />
-      </Container>
+
     </>
   );
 }

@@ -29,14 +29,14 @@ export default function TrendingCoins(params) {
 
     return (
         <>
-            <div className=" lg:w-[100%]  xl:w-[426px] bg-white rounded-lg mx-auto my-7 p-9">
+            <div className="px-3 py-3 lg:w-[100%]  xl:w-[426px] bg-white rounded-lg mx-auto my-7 ">
                 <section className="">
                     <h1 className=" text-[24px] font-[600] ">Trending Coins (24h)</h1>
                 </section>
                 <section className="my-10">
                     {
                         trendingCoins.slice(0, 3).map((coins) => (
-                            <div key={coins.item.coin_id} className="flex justify-between my-5">
+                            <div key={coins.item.coin_id} className="flex justify-between my-7">
                                 <div className="flex gap-3">
                                     {trendingCoins ? <Image alt="img" width={100} height={100} src={coins.item.small} className="my-auto w-7 h-7 rounded-full" /> : <Skeleton variant="circular" className="w-7 h-7" />}
                                     {trendingCoins ? <label className=" text-[16px] font-[500] lg:text-[14px]">{coins.item.name}({coins.item.symbol})</label> : <Skeleton variant="text" className="w-100px h-3" />}

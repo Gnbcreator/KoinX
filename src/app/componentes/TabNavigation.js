@@ -131,18 +131,18 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                     <Tabs value={value} onChange={handleChange} className="border-b-2 overflow-x-auto" variant="scrollable" scrollButtons="auto">
                         {
                             tabs.map((items) => (
-                                <Tab style={{ textTransform: "capitalize" }} onClick={() => scrollToSection(items.ref)} key={items.index} className="mx-2 capitalize text-[16px] font-[500] text-black" value={items.index} label={items.label} />
+                                <Tab style={{ textTransform: "capitalize" }} onClick={() => scrollToSection(items.ref)} key={items.index} className=" capitalize text-[16px] font-[500] text-black" value={items.index} label={items.label} />
                             ))
                         }
                     </Tabs>
                 </div>
                 {/* Performance section */}
-                <div className="p-[24px] lg:p-[20px] xl:p-[24px] mt-10 bg-white rounded-lg  lg:h-[632px] xl:h-[632px]">
+                <div className="px-3 py-3 lg:p-[20px] xl:p-[24px] mt-7 bg-white rounded-lg  lg:h-[632px] xl:h-[632px] border">
                     <div ref={overviewRef} className="">
                         <div>
                             <h1 className="text-[24px] font-[600]">Performance</h1>
                         </div>
-                        <div className="flex justify-between w-auto  my-12">
+                        <div className="flex justify-between w-auto  my-10">
                             <section className="grid gap-y-4">
                                 <label className=" text-[13.48px] font-[400] ">Today&apos;s Low</label>
                                 {
@@ -234,7 +234,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
 
                                                                             }
                                                                             <div>
-                                                                                <label className="my-auto font-[400] text-[10px] lg:text-[10px] xl:text-[11.2px] ">{data.Date}</label>
+                                                                                <label className="my-auto font-[400] text-[9px] lg:text-[10px] xl:text-[11.2px] ">{data.Date}</label>
                                                                             </div>
                                                                         </div>
                                                                         :
@@ -264,18 +264,18 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                     </div>
                 </div>
                 {/* setiments */}
-                <div ref={sentimentsRef} className="bg-white rounded-lg my-7 p-5 ">
+                <div ref={sentimentsRef} className="px-3 py-3 bg-white rounded-lg my-7 p-5 ">
                     <div className="">
 
                         <div className=""><h1 className="text-[24px] font-[600]">Sentiments</h1></div>
-                        <div className="my-5 flex">
+                        <div className="my-4 flex">
                             <h1 className="text-[18.91px] font-[600] text-[#44475B]">Key Events</h1>
                             <Image width={100} height={100} alt="img" className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                         </div>
 
                         <div className=" overflow-x-auto  flex  justify-between  gap-[10px]">
 
-                            <div className=" flex-shrink-0 flex w-[340px] lg:w-[456px]  h-[145px]  lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
+                            <div className=" flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px]    lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Frame 1116601921.svg" className="w-[30px] h-[30px] lg:w-[44px] lg:h-[44px]" />
                                 <section className="grid ">
                                     <label className=" text-[12px] lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
@@ -285,7 +285,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </section>
                             </div>
 
-                            <div className=" flex-shrink-0 flex  w-[350px] h-[145px] lg:w-[456px] lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
+                            <div className=" flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px] lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Uptend_mark.svg" className="w-[44px] h-[44px]" />
                                 <section className="grid">
                                     <label className="  text-[12px] lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
@@ -332,7 +332,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                 </div>
 
                 {/* About Bitcoin */}
-                <div ref={newsInsightsRef} className="bg-white rounded-lg my-7 p-5">
+                <div ref={newsInsightsRef} className="px-3 py-3 bg-white rounded-lg my-7 p-5">
                     <div>
                         <div>
                             <section>
@@ -340,20 +340,20 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             </section>
                             <section className="my-5 lg:w-[100%]">
                                 <label className="text-[18px] font-[700]">What is Bitcoin</label>
-                                <p className="text-[16] font-[400] lg:font-[500] text-[#0F1629] my-2 tracking-normal leading-7">
+                                <p className="text-[16px] font-[400] lg:font-[500] text-[#0F1629] my-2 tracking-normal leading-7">
                                     Bitcoin&apos;s price today is US$16,951.82, with a 24-hour trading volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC and a max supply of 21 M BTC
                                 </p>
                             </section>
                             <hr />
                             <section className="my-5 lg:w-[100%]">
                                 <label className="text-[18px] font-[700]">Lorem ipsum dolor sit amet</label>
-                                <p className="text-[16] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
+                                <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
                                     Lorem ipsum dolor sit amet consectetur. Aliquam placerat sit lobortis tristique pharetra. Diam id et lectus urna et tellus aliquam dictum at. Viverra diam suspendisse enim facilisi diam ut sed. Quam scelerisque fermentum sapien morbi sodales odio sed rhoncus. Ultricies urna volutpat pendisse enim facilisi diam ut sed. Quam scelerisque fermentum sapien morbi sodales odio sed rhoncus.
                                 </p>
-                                <p className="text-[16] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
+                                <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
                                     Diam praesent massa dapibus magna aliquam a dictumst volutpat. Egestas vitae pellentesque auctor amet. Nunc sagittis libero adipiscing cursus felis pellentesque interdum. Odio cursus phasellus velit in senectus enim dui. Turpis tristique placerat interdum sed volutpat. Id imperdiet magna eget eros donec cursus nunc. Mauris faucibus diam mi nunc praesent massa turpis a. Integer dignissim augue viverra nulla et quis lobortis phasellus. Integer pellentesque enim convallis ultricies at.
                                 </p>
-                                <p className="text-[16] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
+                                <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
                                     Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam massa vel convallis duis ac. Mi adipiscing semper scelerisque porttitor pulvinar nunc risus. Fermentum potenti iaculis lacinia congue ipsum fames amet dui. Purus ultrices tincidunt volutpat in eget. Ullamcorper dui
                                 </p>
                             </section>
@@ -396,7 +396,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
 
                 {/* Tokenomics */}
 
-                <div ref={tokenomicsRef} className="bg-white rounded-lg my-7 p-5 h-auto">
+                <div ref={tokenomicsRef} className="px-3 py-3 bg-white rounded-lg my-7 p-5 h-auto">
                     <div className="mt-5">
                         <section className="">
                             <h1 className="text-[24px] font-[600]">Tokenomics</h1>
@@ -435,13 +435,13 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         </section>
                         <hr />
                         <section className="lg:w-[100%]">
-                            <p className="text-[16] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus eu fusce adipiscing. Volutpat ultrices nibh sodales massa habitasse urna felis augue. Gravida aliquam fermentum augue eu. Imperdiet bibendum amet aliquam donec. Eget justo dui metus odio rutrum. Vel ipsum eget in at curabitur sem posuere facilisis vitae. Sed lorem sit mauris id eget arcu ut. Vulputate ipsum aliquet odio nisi eu ac risus.</p>
+                            <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus eu fusce adipiscing. Volutpat ultrices nibh sodales massa habitasse urna felis augue. Gravida aliquam fermentum augue eu. Imperdiet bibendum amet aliquam donec. Eget justo dui metus odio rutrum. Vel ipsum eget in at curabitur sem posuere facilisis vitae. Sed lorem sit mauris id eget arcu ut. Vulputate ipsum aliquet odio nisi eu ac risus.</p>
                         </section>
                     </div>
                 </div>
 
                 {/* Teams */}
-                <div ref={teamRef} className="bg-white rounded-lg my-7 p-5">
+                <div ref={teamRef} className="px-3 py-3 bg-white rounded-lg my-7 p-5">
                     <div>
                         <section className="lg:w-[100%]">
                             <label className="text-[24px] font-[600]">Team</label>

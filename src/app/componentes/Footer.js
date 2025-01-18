@@ -52,11 +52,11 @@ export default function Footer() {
                             {/* first row */}
                             <div className='lg:p-7 py-3'>
                                 <label className='text-[18px] font-[700] lg:text-[24px]'>You May Also Like</label>
-                                <div className='relative my-5'>
+                                <div className='relative my-3'>
                                     <section id='slider1' className='flex overflow-hidden gap-4 transition-all scroll-smooth'>
-                                        <div className='border border-blue-300 flex rounded-full bg-white shadow-sm absolute top-[40%] -left-5 lg:top-[60px] lg:-left-5'>
-                                            <IconButton onClick={(e) => scrollLeft1(e)} className=' flex h-7 w-7 '>
-                                                <ArrowForwardIosIcon className='mx-auto rotate-180' />
+                                        <div className='borderborder-opacity-10  flex rounded-full bg-white shadow-sm absolute top-[40%] -left-5 lg:top-[60px] lg:-left-5'>
+                                            <IconButton onClick={(e) => scrollLeft1(e)} className=' flex  p-1'>
+                                                <ArrowForwardIosIcon className='mx-auto rotate-180 w-5 h-5 lg:w-7 lg:h-7' />
                                             </IconButton>
                                         </div>
                                         {
@@ -80,9 +80,9 @@ export default function Footer() {
                                             ))
 
                                         }
-                                        <div className=' border border-blue-300 flex rounded-full bg-white shadow-sm absolute top-[40%] -right-6 lg:top-[60px] lg:-right-5'>
+                                        <div className=' border border-opacity-10 flex rounded-full bg-white shadow-sm absolute top-[40%] -right-6 lg:top-[60px] lg:-right-5'>
                                             <IconButton onClick={(e) => scrollRight1(e)} className=' flex h-7 w-7 '>
-                                                <ArrowForwardIosIcon className='mx-auto' />
+                                                <ArrowForwardIosIcon className='mx-auto w-5 h-5 lg:w-7 lg:h-7' />
                                             </IconButton>
                                         </div>
                                     </section>
@@ -91,16 +91,17 @@ export default function Footer() {
                             {/* second row */}
                             <div className='lg:p-7 py-3'>
                                 <label className='text-[18px] lg:text-[24px] font-[700]'>Trending Coins</label>
-                                <div className='relative my-5'>
-                                    <section id='slider2' className='flex overflow-hidden gap-4 transition-all scroll-smooth'>
-                                        <div className='border border-blue-300 flex rounded-full bg-white shadow-sm absolute top-[40%] -left-5 lg:top-[60px] lg:-left-5'>
-                                            <IconButton onClick={(e) => scrollLeft2(e)} className=' flex h-7 w-7 '>
-                                                <ArrowForwardIosIcon className='mx-auto rotate-180' />
+                                <div className='relative my-3'>
+                                    <section id='slider1' className='flex overflow-hidden gap-4 transition-all scroll-smooth'>
+                                        <div className='borderborder-opacity-10  flex rounded-full bg-white shadow-sm absolute top-[40%] -left-5 lg:top-[60px] lg:-left-5'>
+                                            <IconButton onClick={(e) => scrollLeft1(e)} className=' flex  p-1'>
+                                                <ArrowForwardIosIcon className='mx-auto rotate-180 w-5 h-5 lg:w-7 lg:h-7' />
                                             </IconButton>
                                         </div>
                                         {
+
                                             trendingCoins.map((data) => (
-                                                <div key={data.item.id} className='flex-shrink-0 w-[55%] h-[110px] md:w-[252px] md:h-[160px] lg:w-[252px] lg:h-[160px] rounded-[10px] border-2 p-3'>
+                                                <div key={data.item.coin_id} className='flex-shrink-0 w-[55%] h-[110px] md:w-[252px] md:h-[160px] lg:w-[252px] lg:h-[160px] rounded-[10px] border-2 p-3'>
                                                     <div className='flex'>
                                                         <Image width={100} height={100} alt='img' className='my-auto w-5 h-5  lg:w-[26px] lg:h-[26px] rounded-full' src={data.item.small} />
                                                         <div className='flex justify-between w-[100%]'>
@@ -112,14 +113,15 @@ export default function Footer() {
                                                         <label className='font-[500] text-[12.62px] lg:text-[20px] '>${numberFormater(data.item.data.price)}</label>
                                                     </div>
                                                     <div className='py-1'>
-                                                        <Image alt='img' width={100} height={100} className='h-[40px] w-[100%] md:w-[200px] md:h-[60px] lg:w-[200px] lg:h-[60px]' src={data.item.data.sparkline} />
+                                                        <Image width={100} height={100} alt='' className='h-[40px] w-[100%] md:w-[200px] md:h-[60px] lg:w-[200px] lg:h-[60px]' src={data.item.data.sparkline} />
                                                     </div>
                                                 </div >
                                             ))
+
                                         }
-                                        <div className=' border border-blue-300 flex rounded-full bg-white shadow-sm absolute top-[40%] -right-6 lg:top-[60px] lg:-right-5'>
-                                            <IconButton onClick={(e) => scrollRight2(e)} className=' flex h-7 w-7 '>
-                                                <ArrowForwardIosIcon className='mx-auto' />
+                                        <div className=' border border-opacity-10 flex rounded-full bg-white shadow-sm absolute top-[40%] -right-6 lg:top-[60px] lg:-right-5'>
+                                            <IconButton onClick={(e) => scrollRight1(e)} className=' flex h-7 w-7 '>
+                                                <ArrowForwardIosIcon className='mx-auto w-5 h-5 lg:w-7 lg:h-7' />
                                             </IconButton>
                                         </div>
                                     </section>

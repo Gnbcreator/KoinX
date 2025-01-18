@@ -16,10 +16,10 @@ export default function Header(params) {
             <Container maxWidth="xl" className=' '>
                 <div className='flex justify-between h-[60.75px] lg:h-[80px]  '>
                     <div className='my-auto'>
-                        <Image src={'/logo.svg'} width={100} height={100} alt='img' />
+                        <Image src={'/logo.svg'} className='w-[80.14px] h-[20.25px]' width={100} height={100} alt='img' />
                     </div>
-                    <button className='lg:hidden xl:hidden mt-4 p-2 my-auto' onClick={handleMenu}>
-                        <Menu className='my-auto w-[28.42px] h-[28.42px] lg:hidden xl:hidden' />
+                    <button className='lg:hidden xl:hidden mt-3  my-auto' onClick={handleMenu}>
+                        <Menu className='mt-[10px] w-[27.42px] h-[27.42px] lg:hidden xl:hidden' />
                     </button>
 
                     <div className='font-semibold text-xl lg:flex gap-5 my-auto hidden'>
