@@ -131,7 +131,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                     <Tabs value={value} onChange={handleChange} className="border-b-2 overflow-x-auto" variant="scrollable" scrollButtons="auto">
                         {
                             tabs.map((items) => (
-                                <Tab onClick={() => scrollToSection(items.ref)} key={items.index} className="mx-2 capitalize text-[16px] font-[500] text-black" value={items.index} label={items.label} />
+                                <Tab style={{ textTransform: "capitalize" }} onClick={() => scrollToSection(items.ref)} key={items.index} className="mx-2 capitalize text-[16px] font-[500] text-black" value={items.index} label={items.label} />
                             ))
                         }
                     </Tabs>
@@ -144,7 +144,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         </div>
                         <div className="flex justify-between w-auto  my-12">
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400] ">Today&aposs Low</label>
+                                <label className=" text-[13.48px] font-[400] ">Today&apos;s Low</label>
                                 {
                                     low ? <label className=" text-[13.48px] font-[400]">{numberFormater(low)}</label> : <Skeleton variant="text" className=" w-[100px]" />
                                 }
@@ -162,7 +162,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </div>
                             </section >
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400]">Today&aposs High</label>
+                                <label className=" text-[13.48px] font-[400]">Today&apos;s High</label>
                                 {high ? <label className="text-end text-[13.48px] font-[400]">{numberFormater(high)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                             </section>
                         </div >
@@ -341,7 +341,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             <section className="my-5 lg:w-[100%]">
                                 <label className="text-[18px] font-[700]">What is Bitcoin</label>
                                 <p className="text-[16] font-[400] lg:font-[500] text-[#0F1629] my-2 tracking-normal leading-7">
-                                    Bitcoin&aposs price today is US$16,951.82, with a 24-hour trading volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC and a max supply of 21 M BTC
+                                    Bitcoin&apos;s price today is US$16,951.82, with a 24-hour trading volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC and a max supply of 21 M BTC
                                 </p>
                             </section>
                             <hr />

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import IconButton from '@mui/material/IconButton'
 import { Menu } from '@mui/icons-material'
 import { useState } from 'react'
+
 export default function Header(params) {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,9 +18,9 @@ export default function Header(params) {
                     <div className='my-auto'>
                         <Image src={'/logo.svg'} width={100} height={100} alt='img' />
                     </div>
-                    <IconButton size='small' color='primary' className='lg:hidden mt-4 p-2 my-auto' aria-label="" onClick={handleMenu}>
-                        <Menu className='my-auto w-[27.42px] h-[27.42px]' />
-                    </IconButton>
+                    <button className='lg:hidden xl:hidden mt-4 p-2 my-auto' onClick={handleMenu}>
+                        <Menu className='my-auto w-[28.42px] h-[28.42px] lg:hidden xl:hidden' />
+                    </button>
 
                     <div className='font-semibold text-xl lg:flex gap-5 my-auto hidden'>
                         <nav className=' lg:flex my-auto gap-12'>
@@ -49,7 +50,7 @@ export default function Header(params) {
                 {/* nav for small devices */}
                 {
                     menuOpen ?
-                        <div className='bg-white animate-slideDown rounded-lg inset-2 p-4  h-fit absolute top-[64px]  shadow-md transition-all delay-75'>
+                        <div className=' lg:hidden xl:hidden bg-white animate-slideDown rounded-lg inset-2 p-4  h-fit absolute top-[64px]  shadow-md transition-all delay-75'>
                             <div className='font-semibold text-xl   lg:hidden grid'>
                                 <nav className=''>
                                     <Link href={''} className='hover:bg-violet-200'>

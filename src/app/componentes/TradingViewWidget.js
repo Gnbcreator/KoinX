@@ -5,6 +5,7 @@ function TradingViewWidget() {
     const container = useRef();
 
     useEffect(() => {
+        const containerNode = container.current;
 
         const script = document.createElement("script");
         script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
@@ -30,18 +31,19 @@ function TradingViewWidget() {
           "hide_volume": true,
           "support_host": "https://www.tradingview.com"
         }`;
-        container.current.appendChild(script);
-        return () => {
-            if (container.current) {
-                container.current.innerHTML = ""
-            }
-        }
 
+        containerNode.appendChild(script);
+
+        return () => {
+            if (containerNode) {
+                containerNode.innerHTML = "";
+            }
+        };
     }, []);
 
     return (
-        <div className="tradingview-widget-container " ref={container} style={{ height: "100%", width: "100%", border: "0px" }}>
-            <div className="tradingview-widget-container__widge" style={{ height: "100%", width: "100%" }} ></div>
+        <div className="h-[100%] w-[100%] relative" ref={container} >
+            <div className="absolute"></div>
         </div>
     );
 }

@@ -23,10 +23,9 @@ export default function TrendingCoins(params) {
         return new Intl.NumberFormat('en-US', { maximumFractionDigits: 2, style: "decimal" }).format(value)
     }
 
-    console.log(trendingCoins)
     useEffect(() => {
         getTrendingCoin()
-    }, [])
+    }, [url, options])
 
     return (
         <>

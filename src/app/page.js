@@ -10,6 +10,7 @@ import TabNavigation from "./componentes/TabNavigation";
 import TrendingCoins from "./componentes/Trendingcoins";
 import numberFormater from "@/utils/numberFormater";
 import Footer from "./componentes/Footer";
+import { ArrowForward } from "@mui/icons-material";
 
 
 export default function Home() {
@@ -107,16 +108,16 @@ export default function Home() {
 
       <Container maxWidth="xl">
         {/* Breadcrumbs */}
-        <Breadcrumbs separator=">>" className="flex lg:text-lg lg:px-2  mt-3">
-          <Link href={"/"} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
-          <Link href={"/"} className="font-[400] text-14px text-slate-700 leading-[16.94px]" >Bitcoin</Link>
-        </Breadcrumbs>
-        <div className=" grid grid-cols-12 -mt-5 lg:gap-6 ">
-
+        <div className="my-4 flex lg:text-lg lg:px-2">
+          <Breadcrumbs separator=">>">
+            <Link href={"/"} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
+            <Link href={"/"} className="font-[400] text-14px text-slate-700 leading-[16.94px]" >Bitcoin</Link>
+          </Breadcrumbs>
+        </div>
+        <div className="my-4  grid grid-cols-12  lg:gap-6 ">
           {/* left side section  */}
           <section className=" col-span-full lg:col-span-8 xl:col-span-8  grid grid-cols-12">
-
-            <div className="bg-white rounded-xl lg:my-10 lg:gap-16 col-span-12 p-4 ">
+            <div className="bg-white rounded-xl lg:my-5 lg:gap-16 col-span-12 p-4 ">
 
               <div className="flex gap-20 lg:my-2">
                 <div className="flex gap-3">
@@ -213,18 +214,18 @@ export default function Home() {
 
           {/*Right  section  */}
           <section className=" col-span-full  lg:col-span-4 ">
-            <div className="lg:my-10 grid grid-cols-1 lg:flex lg:flex-col mx-auto w-[100%] h-auto lg:w-[100%]  xl:w-[426px] xl:h-[515px] bg-[#0052FE] rounded-2xl py-14">
+            <div className="lg:my-5 grid flex-col grid-cols-1 lg:flex lg:flex-col mx-auto w-[100%] h-auto lg:w-[100%]  xl:w-[426px] xl:h-[515px] bg-[#0052FE] rounded-2xl py-14">
               {/* Image Div */}
               <div className=" mx-auto  order-1 lg:col-span-5 lg:my-5 xl:my-10">
                 <Image alt="img" src="/accets/mobile_Vector.svg" width={100} height={100} quality={100} className="w-[149px] h-[139px] lg:w-[150px] lg:h-[160px] xl:w-[170px] xl:h-[166px] mx-auto" />
               </div>
 
               {/* Text Div */}
-              <div className=" mx-auto col-span-1 px-16 lg:px-2">
-                <h1 className="lg:w-[100%] xl:w-[327px] text-center font-[700] text-[22px] lg:text-[20px] xl:text-[24px] text-wrap text-white">
+              <div className=" lg:w-[100%]  xl:w-[80%] mx-auto col-span-1 px-16 lg:px-2">
+                <h1 className="mx-auto lg:w-[100%] xl:w-[270px] text-center font-[700] text-[22px] lg:text-[20px] xl:text-[24px] text-wrap text-white">
                   Get Started with KoinX for FREE
                 </h1>
-                <p className="tracking-wider leading-6 text-center font-[500] text-[14px] lg:text-[12px] text-white my-7 lg:my-3">
+                <p className="mx-auto  tracking-wider leading-7 text-center font-[500] text-[14px] lg:text-[12px] text-white my-7 lg:my-3">
                   With our range of features that you can equip for free,
                   KoinX allows you to be more educated and aware of your tax reports.
                 </p>
@@ -235,7 +236,7 @@ export default function Home() {
                 <button className="lg:my-7 md:my-7 text-center w-[237px] h-[48px] bg-white rounded-lg text-[16px] font-[600] flex mx-auto">
                   <label className="mx-auto flex my-auto">
                     Get Started for FREE
-                    <Image width={100} height={100} alt="img" src="/accets/Arrow-Right.svg" className="my-auto" />
+                    <ArrowForward className="my-auto w-8 h-8" />
                   </label>
                 </button>
               </div>
