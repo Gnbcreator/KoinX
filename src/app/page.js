@@ -108,7 +108,6 @@ export default function Home() {
 
       <Container maxWidth="xl">
         {/* Breadcrumbs */}
-<<<<<<< HEAD
         <div className="my-4 flex lg:text-lg lg:px-2">
           <Breadcrumbs separator=">>">
             <Link href={"/"} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
@@ -116,14 +115,6 @@ export default function Home() {
           </Breadcrumbs>
         </div>
         <div className="my-4  grid grid-cols-12  lg:gap-6 ">
-=======
-        <Breadcrumbs separator=">>" className="flex lg:text-lg lg:px-2  my-5">
-          <Link href={"/"} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
-          <Link href={"/"} className="font-[400] text-14px text-slate-700 leading-[16.94px]" >Bitcoin</Link>
-        </Breadcrumbs>
-        <div className=" grid grid-cols-12 -mt-5 lg:gap-6 ">
-
->>>>>>> 8f1258debfa5b74e6ebdaa46af325bf3f3f46037
           {/* left side section  */}
           <section className=" col-span-full lg:col-span-8 xl:col-span-8  grid grid-cols-12">
             <div className="bg-white rounded-xl lg:my-5 lg:gap-16 col-span-12 p-4 ">
