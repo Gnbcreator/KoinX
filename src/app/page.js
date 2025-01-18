@@ -249,7 +249,7 @@ export default function Home() {
             </div>
           </section>
         </div >
-        <Container maxWidth="xl" className="bg-white my-7">
+        <Container maxWidth="xl" className="bg-white my-7 rounded-lg">
           <Footer />
         </Container>
       </Container >
