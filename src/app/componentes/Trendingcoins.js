@@ -25,7 +25,7 @@ export default function TrendingCoins(params) {
 
     useEffect(() => {
         getTrendingCoin()
-    }, [url, options])
+    }, [])
 
     return (
         <>
