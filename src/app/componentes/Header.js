@@ -51,10 +51,10 @@ export default function Header(params) {
                 {
                     menuOpen ?
                         <div className=' lg:hidden xl:hidden bg-white animate-slideDown rounded-lg inset-2 p-4  h-fit absolute top-[64px]  shadow-md transition-all delay-75'>
-                            <div className='font-semibold text-xl   lg:hidden grid'>
+                            <div className='text-[14px] font-[500]   lg:hidden grid'>
                                 <nav className=''>
                                     <Link href={''} className='hover:bg-violet-200'>
-                                        <h4 className='p-3'>Crypto Taxes</h4>
+                                        <h4 className='p-3 '>Crypto Taxes</h4>
                                     </Link>
                                     <Link href={''} className='hover:bg-violet-200'>
                                         <h4 className='p-3'>Free Tool</h4>
