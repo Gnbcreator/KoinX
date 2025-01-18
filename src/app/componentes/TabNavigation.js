@@ -273,7 +273,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             <Image width={100} height={100} alt="img" className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                         </div>
 
-                        <div className=" overflow-x-auto  flex  justify-between  gap-[10px]">
+                        <div className=" overflow-x-auto scrollbar-hide flex  justify-between  gap-[10px]">
 
                             <div className=" flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px]    lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Frame 1116601921.svg" className="w-[30px] h-[30px] lg:w-[44px] lg:h-[44px]" />
@@ -303,7 +303,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 <Image width={100} height={100} alt="img" className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                             </div>
                             <div className="flex justify-evenly w-[100%]  lg:w-[830px] lg:gap-[14px] my-7">
-                                <div className="bg-[#EBF9F4] w-[30%] lg:w-[116.86px] md:h-[120px] xl:h-[123px] rounded-full flex p-4">
+                                <div className="bg-[#EBF9F4] w-[50%] lg:w-[116.86px] md:h-[120px] xl:h-[123px] rounded-full flex p-4">
                                     <div className="mx-auto flex">
                                         <h1 className="my-auto text-[36.41px] font-[500] text-[#08af83]">76</h1>
                                         <span className="my-auto text-[16px] font-[500] text-[#08af83] ">%</span>
