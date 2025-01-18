@@ -1,8 +1,7 @@
-import numberFormater from '@/utils/NumberFormater';
+import numberFormater from '@/utils/numberFormater';
 import Container from '@mui/material/Container'
 import { useEffect, useState } from 'react';
 import IconButton from '@mui/material/IconButton'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Skeleton } from '@mui/material';
 import Image from "next/image";

@@ -1,8 +1,8 @@
 'use client'
 import { List, Skeleton, Tab, Tabs } from "@mui/material";
 import React, { useEffect, useState, useRef } from "react";
-import { Label, PlayArrow } from '@mui/icons-material';
-import numberFormater from "@/utils/NumberFormater";
+import { ArrowForward, Label, PlayArrow } from '@mui/icons-material';
+import numberFormater from "@/utils/numberFormater";
 import dateFormater from "@/utils/dateFormater";
 import { Gauge, gaugeClasses } from '@mui/x-charts/Gauge';
 import Image from "next/image";
@@ -368,7 +368,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                             <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your Profits</h1>
                                             <button className=" flex text-[13.6px] lg:text-[14px] font-[600] bg-blue-50 p-2 rounded-lg my-4">
                                                 <label className="text-[13.6px] font-[600]">Check Now </label>
-                                                <Image width={100} height={100} alt="img" className="" src="/accets/Arrow-Right.svg " />
+                                                <ArrowForward />
                                             </button>
                                         </div>
                                     </div>
@@ -379,7 +379,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                             <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your tax liability</h1>
                                             <button className="flex text-[14px] font-[600] bg-blue-50 p-2 rounded-lg my-4 ">
                                                 <label>Check Now </label>
-                                                <Image alt="img" width={100} height={100} className="" src="/accets/Arrow-Right.svg " />
+                                                <ArrowForward />
                                             </button>
                                         </div>
                                     </div>

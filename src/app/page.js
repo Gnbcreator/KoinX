@@ -8,7 +8,7 @@ import TradingViewWidget from "./componentes/TradingViewWidget";
 import React, { useEffect, useState } from "react";
 import TabNavigation from "./componentes/TabNavigation";
 import TrendingCoins from "./componentes/Trendingcoins";
-import numberFormater from "@/utils/NumberFormater";
+import numberFormater from "@/utils/numberFormater";
 import Footer from "./componentes/Footer";
 
 
