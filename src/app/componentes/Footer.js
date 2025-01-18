@@ -37,7 +37,7 @@ export default function Footer() {
         const result = await response.json();
         setTrendingCoins(result.coins);
     }
-    console.log(trendingCoins)
+   
 
     useEffect(() => {
         getTrendingCoin()
