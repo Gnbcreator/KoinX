@@ -50,7 +50,7 @@ export default function Header(params) {
                 {/* nav for small devices */}
                 {
                     menuOpen ?
-                        <div className=' lg:hidden xl:hidden bg-white animate-slideDown rounded-lg inset-2 p-4  h-fit absolute top-[64px]  shadow-md transition-all delay-75'>
+                        <div className=' lg:hidden xl:hidden bg-white animate-slideDown rounded-lg inset-2 p-4  h-fit absolute top-[62px]  shadow-md transition-all delay-75'>
                             <div className='text-[14px] font-[500]   lg:hidden grid'>
                                 <nav className=''>
                                     <Link href={''} className='hover:bg-violet-200'>
