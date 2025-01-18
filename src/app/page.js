@@ -107,7 +107,7 @@ export default function Home() {
 
       <Container maxWidth="xl">
         {/* Breadcrumbs */}
-        <Breadcrumbs separator=">>" className="flex lg:text-lg lg:px-2  mt-3">
+        <Breadcrumbs separator=">>" className="flex lg:text-lg lg:px-2  my-5">
           <Link href={"/"} className="font-[400] font text-14px active:text-slate-400 leading-[16.94px]" >Cryptocurrencies</Link>
           <Link href={"/"} className="font-[400] text-14px text-slate-700 leading-[16.94px]" >Bitcoin</Link>
         </Breadcrumbs>
