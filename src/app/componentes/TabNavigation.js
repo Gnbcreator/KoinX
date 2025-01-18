@@ -362,7 +362,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 <label className="text-[18px] font-[700]">Already Holding Bitcoin?</label>
                                 <div className="grid gap-5 lg:flex   xl:gap-28 my-4">
                                     {/* card 1 */}
-                                    <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#79F1A4] to-[#0E5CAD] flex gap-5">
+                                    <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#79F1A4] to-[#0E5CAD] flex gap-3 lg:gap-5 md:gap-5 xl:gap-5">
                                         <Image alt="img" width={100} height={100} src="/accets/Rectangle 11947.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
                                         <div className="my-auto lg:w-[195px] lg:h-[104px]">
                                             <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your Profits</h1>
@@ -373,7 +373,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                         </div>
                                     </div>
                                     {/* card 2 */}
-                                    <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#FF9865] to-[#EF3031] flex gap-5">
+                                    <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#FF9865] to-[#EF3031] flex gap-3 lg:gap-5 md:gap-5 xl:gap-5">
                                         <Image width={100} alt="img" height={100} src="/accets/Rectangle 11948.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
                                         <div className="my-auto w-[195px] h-[104px]">
                                             <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your tax liability</h1>
