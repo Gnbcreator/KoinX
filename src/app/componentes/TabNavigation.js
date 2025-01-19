@@ -275,7 +275,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
 
                         <div className=" scrollbar-hide overflow-x-auto  flex  justify-between  gap-[10px]">
 
-                            <div className=" scrollbar-hide flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px]    lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
+                            <div className=" scrollbar-hide flex-shrink-0 flex w-[319.1px] h-fit lg:w-[456px]    lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Frame 1116601921.svg" className="w-[30px] h-[30px] lg:w-[44px] lg:h-[44px]" />
                                 <section className="grid ">
                                     <label className=" line-clamp-2 text-base lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
@@ -285,7 +285,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </section>
                             </div>
 
-                            <div className=" flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px] lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
+                            <div className=" flex-shrink-0 flex w-[319.1px]  h-fit lg:w-[456px] lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Uptend_mark.svg" className="w-[44px] h-[44px]" />
                                 <section className="grid">
                                     <label className=" line-clamp-2 text-base lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
