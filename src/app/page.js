@@ -15,8 +15,8 @@ import { ArrowForward } from "@mui/icons-material";
 
 export default function Home() {
   const [cryptoCoin, setCryptoCoin] = useState([]);
-  const [INR, setInr] = useState();
   const [marketData, setMarketData] = useState([])
+  const [inrPrice, setInr] = useState()
   const [high52W, setHigh52W] = useState();
   const [low52W, setLow52W] = useState();
   const [high7D, setHigh7D] = useState();
@@ -24,15 +24,27 @@ export default function Home() {
 
 
   const getCoinDetails = async () => {
-    const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true&precision=full&include_24hr_high=true&include_24hr_low=true';
+    const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&vs_currencies=inr&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true&precision=full&include_24hr_high=true&include_24hr_low=true';
     const options = {
       method: 'GET',
       headers: { accept: 'application/json', 'x-cg-demo-api-key': process.env.NEXT_PUBLIC_API_KEY }
-    };;
+    };
 
     const response = await fetch(url, options);
     const result = await response.json()
     setCryptoCoin(result);
+  }
+
+  const getIndianPrice = async () => {
+    const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true&precision=full'
+    const options = {
+      method: 'GET',
+      headers: { accept: 'application/json', 'x-cg-demo-api-key': process.env.NEXT_PUBLIC_API_KEY }
+    };
+    const response = await fetch(url, options);
+    const result = await response.json()
+    setInr(result);
+
   }
 
 
@@ -82,31 +94,23 @@ export default function Home() {
 
   }
 
-  const usdToINR = async () => {
-    const response = await fetch(` https://v6.exchangerate-api.com/v6/451329bef870f9d2f3296f30/latest/USD`, {
-      method: 'GET',
-    })
-    const usdRate = await response.json();
-    const INR = usdRate.conversion_rates.INR;
-    setInr(INR);
-
-  }
-
   useEffect(() => {
     getCoinDetails();
     getMarketData();
     getMarketDataYear();
-    usdToINR()
-  }, [])
+    getIndianPrice()
+
+  }, []);
+
 
 
   return (
     <>
-      <Container maxWidth="2xl" className="border-b bg-white shadow">
+      <Container maxWidth="2xl" disableGutters className="border-b bg-white shadow">
         <Header />
       </Container>
 
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" disableGutters className="px-2">
         {/* Breadcrumbs */}
         <div className="my-4 flex lg:text-lg lg:px-2">
           <Breadcrumbs separator=">>">
@@ -119,7 +123,7 @@ export default function Home() {
           <section className=" col-span-full lg:col-span-8 xl:col-span-8  grid grid-cols-12">
             <div className="bg-white rounded-lg lg:my-5 lg:gap-16 col-span-12 p-4 border">
 
-              <div className="my-4 flex gap-20 lg:my-2">
+              <div className="my-4 flex justify-between md:justify-normal lg:justify-normal xl:justify-normal gap-10 md:gap-20 lg:gap-20 xl:gap-20 lg:my-2">
                 <div className="flex gap-3">
                   <Image width={100} height={100} alt="img" src="/accets/bitcoin-svg.svg" className="my-auto w-[32px] h-[32px]" />
                   <h1 className="my-auto font-[600] text-[21px] text-4xl">Bitcoin</h1>
@@ -131,9 +135,9 @@ export default function Home() {
               </div>
 
               <div className="">
-                <div className=" flex my-auto gap-7 lg:mt-10">
+                <div className=" flex justify-between md:justify-normal lg:justify-normal xl:justify-normal my-auto gap-7 lg:mt-10">
                   {
-                    cryptoCoin ? <h1 className="text-[28px] font-[600]">${numberFormater(cryptoCoin?.bitcoin?.usd)}</h1>
+                    cryptoCoin ? <h1 className="text-[24px] md:text-[28px] lg:text-[28px] xl:text-[28px] font-[600]">${numberFormater(cryptoCoin?.bitcoin?.usd)}</h1>
                       :
                       <Skeleton
                         variant="text"
@@ -145,9 +149,9 @@ export default function Home() {
                   <div className="flex" >
                     {
                       cryptoCoin ?
-                        <label className="rounded-[4px] my-auto bg-[#EBF9F4] flex w-[84px] h-[28px]">
-                          <Image width={100} height={100} alt="img" className=" w-[11px] h-[8px] my-auto mx-auto " src="/accets/Polygon2.svg" />
-                          <label className="text-[#14B079] my-auto mx-auto text-[16px]  text font-[500] ">{numberFormater(cryptoCoin?.bitcoin?.usd_24h_change)}%</label>
+                        <label className="rounded-[4px] my-auto bg-[#EBF9F4] flex w-[70px] h-[24px] md:w-[84px] md:h-[28px lg:w-[84px] lg:h-[28px] xl:w-[84px] xl:h-[28px] px-2">
+                          <Image width={100} height={100} alt="img" className=" w-[10px] h-[7px]   xl:w-[11px] xl:h-[8px] my-auto lg:mx-auto xl:mx-auto" src="/accets/Polygon2.svg" />
+                          <label className="text-[#14B079] my-auto mx-2 text-[14px] lg:text-[16px] xl:lg:text-[16px]  font-[500] ">{numberFormater(cryptoCoin?.bitcoin?.usd_24h_change)}%</label>
                         </label>
                         :
                         <Skeleton
@@ -157,7 +161,7 @@ export default function Home() {
                         />
                     }
                     {
-                      cryptoCoin ? <label className="text-[#768396] text-[14px] my-auto font-[500] mx-2 ">(24H)</label> : <Skeleton
+                      cryptoCoin ? <label className="text-[#768396] text-[12px] md:text-[14px] lg:text-[14px] xl:text-[14px] my-auto font-[500] mx-2 ">(24H)</label> : <Skeleton
                         variant="text"
                         className="text-[28px] w-[50px]"
                         animation="wave"
@@ -166,9 +170,9 @@ export default function Home() {
                   </div>
                 </div>
                 {
-                  cryptoCoin ?
+                  cryptoCoin.bitcoin ?
                     <div className="gap-5 ">
-                      <h1 className=" text-[16px] font-[500]">₹{numberFormater(cryptoCoin?.bitcoin?.usd * INR)}</h1>
+                      <h1 className=" text-[14px] md:text-[16px] lg:text-[16px] xl:text-[16px] font-[500]">₹{numberFormater(inrPrice?.bitcoin?.inr)}</h1>
                     </div>
                     :
                     <Skeleton
@@ -249,7 +253,7 @@ export default function Home() {
             </div>
           </section>
         </div >
-        <Container maxWidth="xl" className="bg-white my-7">
+        <Container maxWidth="xl" className="bg-white my-7 rounded-lg px-3" disableGutters>
           <Footer />
         </Container>
       </Container >

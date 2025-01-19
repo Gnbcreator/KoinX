@@ -50,8 +50,8 @@ export default function Header(params) {
                 {/* nav for small devices */}
                 {
                     menuOpen ?
-                        <div className=' lg:hidden xl:hidden bg-white animate-slideDown rounded-lg inset-2 p-4  h-fit absolute top-[64px]  shadow-md transition-all delay-75'>
-                            <div className='font-semibold text-xl   lg:hidden grid'>
+                        <div className='border lg:hidden xl:hidden bg-white animate-slideDown rounded-b-lg inset-2 p-4  h-fit absolute top-[60px]  shadow-md transition-all delay-75'>
+                            <div className='font-[500] text-base   lg:hidden grid'>
                                 <nav className=''>
                                     <Link href={''} className='hover:bg-violet-200'>
                                         <h4 className='p-3'>Crypto Taxes</h4>
@@ -64,7 +64,7 @@ export default function Header(params) {
                                     </Link>
                                 </nav>
                                 <div className='p-3'>
-                                    <button className=' w-full bg-gradient-to-r  from-[#2870EA] to-[#1B4AEF] rounded-lg  h-[40px] text-white'>
+                                    <button className=' w-full bg-gradient-to-r  from-[#2870EA] to-[#1B4AEF] rounded-lg  h-[30px] text-white'>
                                         Get Started
                                     </button>
                                 </div>

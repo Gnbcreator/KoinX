@@ -131,7 +131,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                     <Tabs value={value} onChange={handleChange} className="border-b-2 overflow-x-auto" variant="scrollable" scrollButtons="auto">
                         {
                             tabs.map((items) => (
-                                <Tab style={{ textTransform: "capitalize" }} onClick={() => scrollToSection(items.ref)} key={items.index} className=" capitalize text-[16px] font-[500] text-black" value={items.index} label={items.label} />
+                                <Tab style={{ textTransform: "capitalize" }} onClick={() => scrollToSection(items.ref)} key={items.index} className=" capitalize text-base font-[500] text-black" value={items.index} label={items.label} />
                             ))
                         }
                     </Tabs>
@@ -144,9 +144,9 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         </div>
                         <div className="flex justify-between w-auto  my-10">
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400] ">Today&apos;s Low</label>
+                                <label className=" text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400] ">Today&apos;s Low</label>
                                 {
-                                    low ? <label className=" text-[13.48px] font-[400]">{numberFormater(low)}</label> : <Skeleton variant="text" className=" w-[100px]" />
+                                    low ? <label className="text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400]">{numberFormater(low)}</label> : <Skeleton variant="text" className=" w-[100px]" />
                                 }
                             </section>
                             <section className="my-auto">
@@ -162,14 +162,14 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </div>
                             </section >
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400]">Today&apos;s High</label>
-                                {high ? <label className="text-end text-[13.48px] font-[400]">{numberFormater(high)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
+                                <label className="text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400]">Today&apos;s High</label>
+                                {high ? <label className="text-end text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400]">{numberFormater(high)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                             </section>
                         </div >
                         <div className="flex justify-between w-auto  my-12">
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400] ">52W Low</label>
-                                {low52W ? <label className=" text-[13.48px] font-[400]">{numberFormater(low52W)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
+                                <label className=" text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400] ">52W Low</label>
+                                {low52W ? <label className=" text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400]">{numberFormater(low52W)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                             </section>
                             <section className="my-auto">
                                 {/* progress bar */}
@@ -184,8 +184,8 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </div>
                             </section>
                             <section className="grid gap-y-4">
-                                <label className=" text-[13.48px] font-[400]">52W High</label>
-                                {high52W ? <label className=" text-end text-[13.48px] font-[400]">{numberFormater(high52W)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
+                                <label className="text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400]">52W High</label>
+                                {high52W ? <label className=" text-end text-[11px] md:text-[13.48px]  lg:text-[13.48px] xl:text-[13.48px] font-[400]">{numberFormater(high52W)}</label> : <Skeleton variant="text" className=" w-[100px]" />}
                             </section>
                         </div>
                     </div >
@@ -218,8 +218,8 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                             fundametals.map((items) => (
                                                 items.body2 && items.body2.map((data) => (
                                                     data.lable === "All-Time High" || data.lable === "All-Time Low" ? (
-                                                        <div key={data.index} className="lg:w-[100%]">
-                                                            <div className="pt-3 pb-3 flex justify-between py-auto  h-[54px] border-b">
+                                                        <div key={data.index} className="lg:w-[100%] ">
+                                                            <div className=" flex justify-between py-auto  h-[54px] border-b">
                                                                 {marketCapDominace ? <div className="my-auto"> <label className="my-auto font-[500] text-[14px] text-[#768396]">{data.lable}</label></div> : <Skeleton variant="text" className=" w-[100px]" />}
 
                                                                 {
@@ -233,8 +233,8 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                                                                     <label className="mx-1 my-auto font-[500] text-[13px] lg:text-[14px] text-[#768396]">{data.Percentage}</label>
 
                                                                             }
-                                                                            <div>
-                                                                                <label className="my-auto font-[400] text-[9px] lg:text-[10px] xl:text-[11.2px] ">{data.Date}</label>
+                                                                            <div className="">
+                                                                                <label className=" font-[400] text-[9px] lg:text-[10px] xl:text-[11.2px] ">{data.Date}</label>
                                                                             </div>
                                                                         </div>
                                                                         :
@@ -273,13 +273,13 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             <Image width={100} height={100} alt="img" className="my-auto mx-3 w-[26px] h-[20px]" src="/accets/SVG_margin.svg" />
                         </div>
 
-                        <div className=" overflow-x-auto  flex  justify-between  gap-[10px]">
+                        <div className=" scrollbar-hide overflow-x-auto  flex  justify-between  gap-[10px]">
 
-                            <div className=" flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px]    lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
+                            <div className=" scrollbar-hide flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px]    lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Frame 1116601921.svg" className="w-[30px] h-[30px] lg:w-[44px] lg:h-[44px]" />
                                 <section className="grid ">
-                                    <label className=" text-[12px] lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
-                                    <p className="text-wrap text-[10px]  overflow-y-auto scroll-smooth scrollbar-hide  font-[400] lg:text-[14px] lg:font-[400] text-[#3E5765]">
+                                    <label className=" line-clamp-2 text-base lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
+                                    <p className="line-clamp-4 md:line-clamp-none text-wrap text-base  overflow-y-auto scroll-smooth scrollbar-hide  font-[400] lg:text-[14px] lg:font-[400] text-[#3E5765]">
                                         Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.
                                     </p>
                                 </section>
@@ -288,8 +288,8 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             <div className=" flex-shrink-0 flex w-[319.1px] h-[142.46px] lg:w-[456px] lg:h-[204px] rounded-xl  bg-[#E8F4FD] p-[18px] gap-3">
                                 <Image width={100} height={100} alt="img" src="/accets/Uptend_mark.svg" className="w-[44px] h-[44px]" />
                                 <section className="grid">
-                                    <label className="  text-[12px] lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
-                                    <p className="text-wrap text-[10px]  overflow-y-auto scroll-smooth scrollbar-hide font-[400] lg:text-[14px] lg:font-[400] text-[#3E5765]">
+                                    <label className=" line-clamp-2 text-base lg:text-[14px] font-[500] text-[#191C1F]">Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.</label>
+                                    <p className="line-clamp-4 md:line-clamp-none text-base overflow-y-auto scroll-smooth scrollbar-hide font-[400] lg:text-[14px] lg:font-[400] text-[#3E5765]">
                                         Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.
                                     </p>
                                 </section>
@@ -340,20 +340,20 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                             </section>
                             <section className="my-5 lg:w-[100%]">
                                 <label className="text-[18px] font-[700]">What is Bitcoin</label>
-                                <p className="text-[16px] font-[400] lg:font-[500] text-[#0F1629] my-2 tracking-normal leading-7">
+                                <p className="text-base font-[400] lg:font-[500] text-[#0F1629] my-2 tracking-normal leading-7">
                                     Bitcoin&apos;s price today is US$16,951.82, with a 24-hour trading volume of $19.14 B. BTC is +0.36% in the last 24 hours. It is currently -7.70% from its 7-day all-time high of $18,366.66, and 3.40% from its 7-day all-time low of $16,394.75. BTC has a circulating supply of 19.24 M BTC and a max supply of 21 M BTC
                                 </p>
                             </section>
                             <hr />
                             <section className="my-5 lg:w-[100%]">
                                 <label className="text-[18px] font-[700]">Lorem ipsum dolor sit amet</label>
-                                <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
+                                <p className="text-base font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
                                     Lorem ipsum dolor sit amet consectetur. Aliquam placerat sit lobortis tristique pharetra. Diam id et lectus urna et tellus aliquam dictum at. Viverra diam suspendisse enim facilisi diam ut sed. Quam scelerisque fermentum sapien morbi sodales odio sed rhoncus. Ultricies urna volutpat pendisse enim facilisi diam ut sed. Quam scelerisque fermentum sapien morbi sodales odio sed rhoncus.
                                 </p>
-                                <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
+                                <p className="text-base font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
                                     Diam praesent massa dapibus magna aliquam a dictumst volutpat. Egestas vitae pellentesque auctor amet. Nunc sagittis libero adipiscing cursus felis pellentesque interdum. Odio cursus phasellus velit in senectus enim dui. Turpis tristique placerat interdum sed volutpat. Id imperdiet magna eget eros donec cursus nunc. Mauris faucibus diam mi nunc praesent massa turpis a. Integer dignissim augue viverra nulla et quis lobortis phasellus. Integer pellentesque enim convallis ultricies at.
                                 </p>
-                                <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
+                                <p className="text-base font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">
                                     Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam massa vel convallis duis ac. Mi adipiscing semper scelerisque porttitor pulvinar nunc risus. Fermentum potenti iaculis lacinia congue ipsum fames amet dui. Purus ultrices tincidunt volutpat in eget. Ullamcorper dui
                                 </p>
                             </section>
@@ -365,7 +365,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                     <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#79F1A4] to-[#0E5CAD] flex gap-5">
                                         <Image alt="img" width={100} height={100} src="/accets/Rectangle 11947.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
                                         <div className="my-auto lg:w-[195px] lg:h-[104px]">
-                                            <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your Profits</h1>
+                                            <h1 className="text-[18px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your Profits</h1>
                                             <button className=" flex text-[13.6px] lg:text-[14px] font-[600] bg-blue-50 p-2 rounded-lg my-4">
                                                 <label className="text-[13.6px] font-[600]">Check Now </label>
                                                 <ArrowForward />
@@ -376,7 +376,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                     <div className="w-[100%] py-3 lg:w-[388px] lg:h-[151px] rounded-[6.65px] bg-gradient-to-r from-[#FF9865] to-[#EF3031] flex gap-5">
                                         <Image width={100} alt="img" height={100} src="/accets/Rectangle 11948.svg" className="w-[119.43px] h-[119.43px] lg:w-[128px] lg:h-[128px] my-auto mx-4" />
                                         <div className="my-auto w-[195px] h-[104px]">
-                                            <h1 className="text-[18.66px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your tax liability</h1>
+                                            <h1 className="line-clamp-2 text-[18px] lg:text-[18px] xl:text-[20px] font-[700] text-white">Calculate your tax liability</h1>
                                             <button className="flex text-[14px] font-[600] bg-blue-50 p-2 rounded-lg my-4 ">
                                                 <label>Check Now </label>
                                                 <ArrowForward />
@@ -386,7 +386,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                 </div>
                                 <hr className="mt-5" />
                                 <div className="w-[100%]">
-                                    <p className="text-[16] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam massa vel convallis duis ac. Mi adipiscing semper scelerisque porttitor pulvinar nunc risus. Fermentum potenti iaculis lacinia congue ipsum fames amet dui. Purus ultrices tincidunt volutpat in eget. Ullamcorper dui</p>
+                                    <p className="text-base font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">Fermentum hendrerit imperdiet nulla viverra faucibus. Sit aliquam massa vel convallis duis ac. Mi adipiscing semper scelerisque porttitor pulvinar nunc risus. Fermentum potenti iaculis lacinia congue ipsum fames amet dui. Purus ultrices tincidunt volutpat in eget. Ullamcorper dui</p>
                                 </div>
                             </section>
 
@@ -435,7 +435,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                         </section>
                         <hr />
                         <section className="lg:w-[100%]">
-                            <p className="text-[16px] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus eu fusce adipiscing. Volutpat ultrices nibh sodales massa habitasse urna felis augue. Gravida aliquam fermentum augue eu. Imperdiet bibendum amet aliquam donec. Eget justo dui metus odio rutrum. Vel ipsum eget in at curabitur sem posuere facilisis vitae. Sed lorem sit mauris id eget arcu ut. Vulputate ipsum aliquet odio nisi eu ac risus.</p>
+                            <p className="text-base font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7">Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus eu fusce adipiscing. Volutpat ultrices nibh sodales massa habitasse urna felis augue. Gravida aliquam fermentum augue eu. Imperdiet bibendum amet aliquam donec. Eget justo dui metus odio rutrum. Vel ipsum eget in at curabitur sem posuere facilisis vitae. Sed lorem sit mauris id eget arcu ut. Vulputate ipsum aliquet odio nisi eu ac risus.</p>
                         </section>
                     </div>
                 </div>
@@ -445,7 +445,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                     <div>
                         <section className="lg:w-[100%]">
                             <label className="text-[24px] font-[600]">Team</label>
-                            <p className="text-[16] font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7" >Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.</p>
+                            <p className="text-base font-[400]  lg:font-[500] text-[#0F1629] my-4 tracking-normal leading-7" >Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas. Proin tempor id pretium quam. Facilisis purus convallis quam augue.</p>
                         </section>
                         {
                             teams.map((data) => (
@@ -453,7 +453,7 @@ export default function TabNavigation({ total_volume, current, low, high, high52
                                     <div className="grid lg:w-[128.61px]">
                                         <Image width={100} height={100} alt="img" src={data.imgae} className="mx-auto" />
                                         <label className="text-center text-[15px] font-[600]">{data.name}</label>
-                                        <small className="text-center text-[12px] font-[400]">{data.designation}</small>
+                                        <small className="text-center text-base font-[400]">{data.designation}</small>
                                     </div>
                                     <div className="font-[400] text-[14px] lg:w-[100%] my-auto">
                                         <p className="text-[14px] font-[400] lg:text-[14px] lg:font-[400] text-[#0F1629] my-4 tracking-normal leading-7">{data.details}</p>

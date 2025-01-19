@@ -1,0 +1,13 @@
+{
+    "watch": [
+        "pages",
+        "components",
+        "styles",
+        "public"
+    ],
+    "ext": "js,jsx,ts,tsx,css",
+    "ignore": [
+        "node_modules"
+    ],
+    "exec": "npm run build-and-start"
+}
